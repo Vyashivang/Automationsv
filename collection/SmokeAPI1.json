@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "eb406093-e0cc-4498-8357-06ae6aec1592",
+		"name": "SmokeTestLevel-1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login-verification",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/Login?username=101010@mailinator.com&password=password",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "101010@mailinator.com"
+						},
+						{
+							"key": "password",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CurrentStatusMeterID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/CurrentStatus?username=101010@mailinator.com&password=password&meterId=2008567",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"CurrentStatus"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "101010@mailinator.com"
+						},
+						{
+							"key": "password",
+							"value": "password"
+						},
+						{
+							"key": "meterId",
+							"value": "2008567"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HistoryMeterID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/History?userName=101010@mailinator.com&password=password&meterId=2008567&startDate=01-01-2022&endDate=01-05-2022",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"History"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "101010@mailinator.com"
+						},
+						{
+							"key": "password",
+							"value": "password"
+						},
+						{
+							"key": "meterId",
+							"value": "2008567"
+						},
+						{
+							"key": "startDate",
+							"value": "01-01-2022"
+						},
+						{
+							"key": "endDate",
+							"value": "01-05-2022"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://qawebapi.waterscope.us",
+			"type": "string"
+		},
+		{
+			"value": "",
+			"type": "string"
+		}
+	]
+}
